@@ -3,9 +3,11 @@ dist/
 .output/
 .vscode
 .idea
+.astro
 
 # dependencies
 node_modules/
+*-lock.yaml
 
 # logs
 npm-debug.log*

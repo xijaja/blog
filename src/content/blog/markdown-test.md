@@ -1,7 +1,7 @@
 ---
 title: Markdown Test Page
-publishDate: 01 Dec 2021
-description: A sample page with the most common elements of an article, including headings, paragraphs, lists, and images. Use it as a starting point for applying your own styles.
+date: 01 Dec 2021
+desc: A sample page with the most common elements of an article, including headings, paragraphs, lists, and images. Use it as a starting point for applying your own styles.
 ---
 
 ![Illustration of woman using a computer receiving likes](/assets/blog/casual-life-3d-likes.webp)
@@ -10,14 +10,24 @@ This page is an adapted version of [markdown-test-page](https://github.com/fullp
 
 ## <a name="top"></a> Table of Contents
 
-- [Headings](#Headings)
-- [Paragraphs](#Paragraphs)
-- [Blockquotes](#Blockquotes)
-- [Lists](#Lists)
-- [Horizontal rule](#Horizontal)
-- [Table](#Table)
-- [Code](#Code)
-- [Inline elements](#Inline)
+- [Headings](#headings)
+- [Heading one](#heading-one)
+  - [Heading two](#heading-two)
+    - [Heading three](#heading-three)
+      - [Heading four](#heading-four)
+        - [Heading five](#heading-five)
+          - [Heading six](#heading-six)
+- [Paragraphs](#paragraphs)
+- [Blockquotes](#blockquotes)
+- [Lists](#lists)
+  - [Ordered List](#ordered-list)
+  - [Unordered List](#unordered-list)
+- [Horizontal rule](#horizontal-rule)
+- [Table](#table)
+- [Code](#code)
+  - [Inline code](#inline-code)
+  - [Highlighted](#highlighted)
+- [Inline elements](#inline-elements)
 
 ---
 
@@ -171,10 +181,10 @@ Ex amet id ex aliquip id do laborum excepteur exercitation elit sint commodo occ
 
 ```html
 <script>
-  let count = 0
+  let count = 0;
 
   function handleClick() {
-    count += 1
+    count += 1;
   }
 </script>
 
