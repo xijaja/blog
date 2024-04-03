@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import SpeedInsights from "@vercel/speed-insights/astro"; // 使用 Vercel Speed Insights 组件来检测网站性能
 import "@styles/fonts.css";
 import "@styles/global.css";
 import { config } from "@config";
@@ -17,7 +18,8 @@ const socialUrl = Astro.site!.href + "assets/social.png";
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" href="https://fav.farm/🧑‍🎨" />
+<!-- <link rel="icon" type="image/x-icon" href="/favicon.ico" /> -->
 
 <!-- Primary Meta Tags -->
 <meta name="title" content={title} />
@@ -53,3 +55,5 @@ const socialUrl = Astro.site!.href + "assets/social.png";
     root.classList.remove("theme-dark");
   }
 </script>
+
+<SpeedInsights />
