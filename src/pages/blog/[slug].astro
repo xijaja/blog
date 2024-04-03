@@ -1,68 +1,59 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Bio from "../../components/Bio.astro";
-// import getPostData from "../../utils/getPostData";
-import {getCollection, type CollectionEntry} from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
-    // const blogEntries = await getCollection("blog", ({ data }) => {
-    //   return data.draft !== true;
-    // });
-    const blogEntries = await getCollection("blog");
-    return blogEntries.map((entry: CollectionEntry<'blog'>) => ({
-        params: {slug: entry.slug},
-        props: {entry},
-    }));
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry: CollectionEntry<"blog">) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
 }
 
 // console.log(Astro.props);
 
-const {entry} = Astro.props;
-const {title, date, desc} = entry.data;
-const {Content} = await entry.render();
+const { entry } = Astro.props;
+const { title, date, desc } = entry.data;
+const { Content } = await entry.render();
 const permalink = `${Astro.site!.href}blog/${entry.slug}`;
 ---
 
 <BaseLayout
-        title={title}
-        description={desc}
-        permalink={permalink}
-        current="blog"
+  title={title}
+  description={desc}
+  permalink={permalink}
+  current="blog"
 >
-    <header>
-        <p>{date} ~ 2m</p>
-        <p>slug: {entry.slug}</p>
-        <p>permalink: {permalink}</p>
-        <h1>{title}</h1>
-        <hr/>
-    </header>
-    <div class="container">
-        <article class="content">
-            <Content/>
-        </article>
-        <hr/>
-        <Bio/>
-    </div>
+  <header>
+    <h1>{title}</h1>
+    <p>{date}</p>
+    <hr />
+  </header>
+  <div class="container">
+    <article class="content">
+      <Content />
+    </article>
+  </div>
 </BaseLayout>
 
 <style>
-    header {
-        text-align: center;
-    }
+  header {
+    text-align: center;
+  }
 
-    header h1 {
-        margin-bottom: 0.7em;
-    }
+  header h1 {
+    margin-bottom: 0.7em;
+  }
 
-    header p {
-        color: var(--text-secondary);
-        text-transform: uppercase;
-        font-family: var(--font-family-sans);
-        font-weight: 600;
-    }
+  header p {
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-family: var(--font-family-sans);
+    font-weight: 600;
+  }
 
-    header hr {
-        min-width: 100px;
-        width: 30%;
-    }
+  header hr {
+    min-width: 100px;
+    width: 30%;
+  }
 </style>

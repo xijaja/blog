@@ -7,6 +7,7 @@ const blogCollection = defineCollection({
     title: z.string(), // 标题
     date: z.string(), // 日期
     desc: z.string().optional(), // 描述
+    draft: z.boolean().optional().default(false), // 是否为草稿
   }),
 });
 

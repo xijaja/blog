@@ -1,17 +1,17 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import { config } from "@config";
+import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-const allBlogPosts = await getCollection("blog");
-
-// allBlogPosts.map((blog:CollectionEntry<'blog'>)=> {
-//   console.log("-->", blog.data.title)
-// })
+// 获取所有博客文章
+const allBlogPosts = await getCollection("blog", ({ data }) => {
+  return data.draft !== true; // 过滤掉草稿文章
+});
 ---
 
 <BaseLayout
-  title="Blog"
-  description="Latest articles."
+  title={`Blog | ${config.base_title}`}
+  description={config.description}
   permalink={`${Astro.site!.href}blog`}
   current="blog"
 >

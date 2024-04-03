@@ -2,6 +2,7 @@
 title: Hello World 👋
 date: 30 Nov 2021
 desc: Every blog starts with a single post. This is yours. Make it great.
+draft: false
 ---
 
 ![Illustration of woman using a meditation app](/assets/blog/casual-life-3d-meditation-crystal.webp)
