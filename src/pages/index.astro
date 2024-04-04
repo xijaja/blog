@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 import { config } from "@config";
 
 const permalink = Astro.site!.href;
@@ -22,11 +23,18 @@ const permalink = Astro.site!.href;
 
     <div class="hero-image-container">
       <picture>
-        <source
+        <!-- <source
           srcset="/assets/young-man-with-laptop.png"
           media="(min-width: 600px)"
-        />
-        <img
+        /> -->
+        <!-- <img
+          class="hero-image"
+          alt="image of a young man with a laptop"
+          src="/assets/young-man-with-laptop.png"
+          width="550"
+          height="466"
+        /> -->
+        <Image
           class="hero-image"
           alt="image of a young man with a laptop"
           src="/assets/young-man-with-laptop.png"
