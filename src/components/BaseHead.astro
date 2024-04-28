@@ -1,7 +1,8 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import LoadingIndicator from "astro-loading-indicator/component";
 import GoogleAnalytics from "./GoogleAnalytics.astro";
-import SpeedInsights from "@vercel/speed-insights/astro"; // 使用 Vercel Speed Insights 组件来检测网站性能
+// import SpeedInsights from "@vercel/speed-insights/astro"; // 使用 Vercel Speed Insights 组件来检测网站性能
 import "@styles/fonts.css";
 import "@styles/global.css";
 import { config } from "@config";
@@ -42,6 +43,7 @@ const socialUrl = Astro.site!.href + "assets/social.png";
 <meta property="twitter:image" content={socialUrl} />
 
 <ViewTransitions />
+<LoadingIndicator color="#80B1BB" height="3px" animationDuration={500} />
 <GoogleAnalytics />
 
 <!-- This is intentionally inlined to avoid FOUC -->
@@ -58,4 +60,4 @@ const socialUrl = Astro.site!.href + "assets/social.png";
   }
 </script>
 
-<SpeedInsights />
+<!-- <SpeedInsights /> -->
