@@ -1,4 +1,5 @@
 ---
+slug: hello-world
 title: Hello World 👋
 date: 30 Nov 2021
 desc: Every blog starts with a single post. This is yours. Make it great.

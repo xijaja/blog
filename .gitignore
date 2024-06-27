@@ -4,6 +4,7 @@ dist/
 .vscode
 .idea
 .astro
+.obsidian
 
 # dependencies
 node_modules/

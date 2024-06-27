@@ -5,22 +5,19 @@ import remarkGfm from "remark-gfm";
 import remarkSmartypants from "remark-smartypants";
 import rehypeExternalLinks from "rehype-external-links";
 
+import tailwind from "@astrojs/tailwind";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://xiwu.me",
-  integrations: [mdx(), svelte()],
+  integrations: [mdx(), svelte(), tailwind()],
   markdown: {
     shikiConfig: {
-      theme: "nord",
+      theme: "nord"
     },
     remarkPlugins: [remarkGfm, remarkSmartypants],
-    rehypePlugins: [
-      [
-        rehypeExternalLinks,
-        {
-          target: "_blank",
-        },
-      ],
-    ],
-  },
+    rehypePlugins: [[rehypeExternalLinks, {
+      target: "_blank"
+    }]]
+  }
 });
