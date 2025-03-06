@@ -2,6 +2,7 @@
 import BaseHead from "@components/BaseHead.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
+import Analytics from "@vercel/analytics/astro";
 
 export interface Props {
   title: string;
@@ -15,11 +16,7 @@ const { title, description, permalink, current } = Astro.props;
 
 <html lang="en">
   <head>
-    <BaseHead
-      title={title}
-      description={description || ""}
-      permalink={permalink}
-    />
+    <BaseHead title={title} description={description || ""} permalink={permalink} />
     <title>{title}</title>
   </head>
   <body class="antialiased">
@@ -30,6 +27,7 @@ const { title, description, permalink, current } = Astro.props;
       </main>
       <Footer />
     </div>
+    <Analytics />
     <style>
       .layout {
         display: flex;
